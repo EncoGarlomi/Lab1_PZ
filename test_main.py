@@ -48,6 +48,15 @@ class CoffeeMachineTests(unittest.TestCase):
         self.assertEqual(machine.money, 0)
         self.assertEqual(machine.money_beznal, 0)
 
+    def test_card_payment_records_revenue_without_change(self):
+        machine = CoffeeMachine()
+
+        success, _, change = machine.buy("Какао", "card")
+
+        self.assertTrue(success)
+        self.assertEqual(change, 0)
+        self.assertEqual(machine.money_beznal, 5500)
+
 
 if __name__ == "__main__":
     unittest.main()
