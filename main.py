@@ -60,10 +60,10 @@ class CoffeeMachine:
         self.cacao_beans = 500
         self.money_nal = 0
         self.money_beznal = 0
+        self.money = 0
         self.money_bills = Counter({2000: 2, 5000: 1, 10000: 1})
         self.money_coins = Counter({50: 20})
-        self.money = 0
-
+        
     @property
     def available_coins(self):
         return sum(value * count for value, count in self.money_coins.items())

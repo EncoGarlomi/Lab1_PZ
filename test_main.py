@@ -46,6 +46,7 @@ class CoffeeMachineTests(unittest.TestCase):
 
         self.assertEqual(collected, 4000)
         self.assertEqual(machine.money, 0)
+        self.assertEqual(machine.money_nal, 0)
         self.assertEqual(machine.money_beznal, 0)
 
     def test_card_payment_records_revenue_without_change(self):
